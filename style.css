@@ -1,6 +1,6 @@
-*{
+/**{
   border: red solid 1px;
-}
+}*/
 
 html {
   height: 90%;
@@ -12,14 +12,12 @@ body{
   justify-content: center;
   flex-direction:column;
   background-color: #24aacc ;
-  flex-wrap: wrap;
 }
 
 #canvas{
   display:flex;
   justify-content: center;  
-  flex-direction:row;
-  align-items:center ;
+
   
 }
 #container{
@@ -39,13 +37,12 @@ label{
   display:flex;
   flex-direction: row;
   justify-content: center;
-  gap: 5px;
+  gap: 10px;
   background-color: #24aacc;
+  margin-bottom: 25px;
   }
 
 #canvas{
-  width:50%;
-  height: 50%;
-  
+
   
 }
