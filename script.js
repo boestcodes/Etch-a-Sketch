@@ -1,13 +1,15 @@
 const WIDTH = 480;
 const HEIGHT = 480;
 let activeRes = 16;
+let btnActive = false;
 
 let pixels = [];
 
 const body = document.querySelector("body");
 const gridSize = document.querySelectorAll("input[name='pixels']");
 const color = document.querySelector("#chooseColor");
-const resetBtn = document.querySelector("#resetBtn")
+const resetBtn = document.querySelector("#resetBtn");
+const eraseBtn = document.querySelector("#eraseBtn")
 
 const canvas = document.querySelector("#canvas");
 const container = document.createElement("div");
@@ -43,11 +45,22 @@ function drawGrid(divisor){
     pixel.style.boxShadow = "inset 0 0 1px #000"
     pixel.addEventListener(("mouseover"), ()=> {
       if(isMouseDown){
-      pixel.style.backgroundColor = color.value;
+        if(btnActive){
+          pixel.style.backgroundColor = "white";  
+        }
+        else{
+          pixel.style.backgroundColor = color.value;
+        }
       }
     })
+    
     pixel.addEventListener(("click"), ()=> {
-      pixel.style.backgroundColor = color.value;
+      if(btnActive){
+        pixel.style.backgroundColor = "white";  
+      }
+      else{
+        pixel.style.backgroundColor = color.value;
+      }
     })
     //pixel.style.border = "1px solid hsl(50, 32%, 85%)";
     container.appendChild(pixel);
@@ -67,6 +80,19 @@ gridSize.forEach((item) =>{
 resetBtn.addEventListener(("click"), ()=>{
   removeAllChildNodes(container);
   drawGrid(activeRes)
+});
+
+eraseBtn.addEventListener(("click"), () => {
+  btnActive = !btnActive;
+
+  if(btnActive){
+    eraseBtn.classList.add("active");
+  }
+  else{
+    eraseBtn.classList.remove("active");
+  }
+  console.log(btnActive)
+
 });
 
 var isMouseDown = false;

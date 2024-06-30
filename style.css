@@ -11,14 +11,16 @@ body{
   display:flex;
   justify-content: center;
   flex-direction:column;
-  background-color: #bfecf7 ;
   align-items: center;
   margin: 0px;
+  height: 100vh;
+  background-image: url(background.jpg);
+  background-size:cover;
 }
 
 h1, #colorField, button, #resolution{
   border: blueviolet 2px solid;
-  box-shadow: 2px 2px 2px darkgray;
+  box-shadow: 2px 2px 2px black;
   background-color: white;
   border-radius: 0.3em;
   padding: 1em;
@@ -26,6 +28,7 @@ h1, #colorField, button, #resolution{
 
 #mainContent{
   display: flex; 
+  margin-bottom: auto;
 }
 
 #colorField{
@@ -58,13 +61,19 @@ h1, #colorField, button, #resolution{
   border-radius: 0.3em;
   margin-left: 4em;
   margin-right: 4em;
-  box-shadow: 2px 2px 2px darkgray;
+  box-shadow: 2px 2px 2px black;
 }
 
 #container{
   display: flex;
   flex-wrap: wrap;
 
+}
+
+#rightSide{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
 button{
@@ -78,8 +87,13 @@ button{
   transition: all 0.3s ease;
 }
 
+.active{
+  background-color: white;
+  color: blueviolet;
+}
+
 button:hover{
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 button:active{
@@ -91,18 +105,20 @@ label{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 0.5em;
 }
 
 footer{
-  background-color: cadetblue;
-  height:fit-content;
-  padding-top: auto;
+  background-color: rgb(168, 129, 4);
+  opacity: 80%;
   width: 100%;
+  height: fit-content;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 2em;
+  align-items: center; 
+  gap: 2em;
+
+
 }
 
 
