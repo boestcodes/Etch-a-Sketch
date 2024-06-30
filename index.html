@@ -9,19 +9,41 @@
 </head>
 
 <body>
-  <div id="resolution">
-    <label for="16px">16px
-    <input type="radio" name="pixels" id="16px" value=16 checked="true"></input></label>
-    <label for="16px">32px
-    <input type="radio" name="pixels" id="32px" value=32></input></label>
-    <label for="16px">64px
-    <input type="radio" name="pixels" id="64px" value=64></input></label>
-    <label for="16px">128px
-    <input type="radio" name="pixels" id="128px" value=128> </input></label>
+  <h1>boestcodes Drawbook</h1>
+  
+  
+  <div id="mainContent">
+
+   <div id="leftSide">
+      <div id="colorField">
+        <label for="head">Color:</label>
+        <input type="color" id="chooseColor" name="head" value="#e66465" />
+      </div>
+
+      <div id="resolution">
+        <label for="8px">8px
+        <input type="radio" name="pixels" id="8px" value=8></input></label>
+        <label for="16px">16px
+        <input type="radio" name="pixels" id="16px" value=16 checked="true"></input></label>
+        <label for="16px">32px
+        <input type="radio" name="pixels" id="32px" value=32></input></label>
+        <label for="16px">64px
+        <input type="radio" name="pixels" id="64px" value=64></input></label>
+      </div>
+    </div> 
+
+    <div id="canvas">
+    </div>
+
+    <div id="rightSide">
+      <button id="resetBtn">RESET</button>
+      
+    </div>
   </div>
 
-  <div id="canvas">
-  </div>
+  <footer>
+    <p>made by boestcodes</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>

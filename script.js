@@ -1,10 +1,14 @@
-const WIDTH = 320;
-const HEIGHT = 320;
+const WIDTH = 480;
+const HEIGHT = 480;
+let activeRes = 16;
 
 let pixels = [];
 
 const body = document.querySelector("body");
-const gridSize = document.querySelectorAll("input");
+const gridSize = document.querySelectorAll("input[name='pixels']");
+const color = document.querySelector("#chooseColor");
+const resetBtn = document.querySelector("#resetBtn")
+
 const canvas = document.querySelector("#canvas");
 const container = document.createElement("div");
 container.setAttribute("style", `height: ${HEIGHT}px; width: ${WIDTH}px; border: 1px solid black`);
@@ -16,7 +20,7 @@ console.log("Start")
 
 
 //draw grid one time to start with default value
-drawGrid(16)
+drawGrid(activeRes)
 
 //remove existing pixels
 function removeAllChildNodes(parent) {
@@ -27,7 +31,7 @@ function removeAllChildNodes(parent) {
 
 //draw the grid
 function drawGrid(divisor){
-
+  activeRes = divisor;
   let heightPixel = 100/divisor;
   let widthPixel = 100/divisor;
 
@@ -35,9 +39,15 @@ function drawGrid(divisor){
     
     const pixel = document.createElement("div");
     pixel.setAttribute("style", `height: ${heightPixel}%; width: ${widthPixel}%`);
-    pixel.style.backgroundColor = "green";
+    pixel.style.backgroundColor = "white";
+    pixel.style.boxShadow = "inset 0 0 1px #000"
     pixel.addEventListener(("mouseover"), ()=> {
-      pixel.style.backgroundColor = "yellow"
+      if(isMouseDown){
+      pixel.style.backgroundColor = color.value;
+      }
+    })
+    pixel.addEventListener(("click"), ()=> {
+      pixel.style.backgroundColor = color.value;
     })
     //pixel.style.border = "1px solid hsl(50, 32%, 85%)";
     container.appendChild(pixel);
@@ -54,7 +64,20 @@ gridSize.forEach((item) =>{
   });
 });
 
+resetBtn.addEventListener(("click"), ()=>{
+  removeAllChildNodes(container);
+  drawGrid(activeRes)
+});
 
+var isMouseDown = false;
+document.addEventListener("mousedown", () =>
+{ 
+  isMouseDown = true;
+});
+document.addEventListener("mouseup", () =>
+{
+  isMouseDown = false;
+});
 
 
 

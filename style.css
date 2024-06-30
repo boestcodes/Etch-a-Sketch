@@ -3,26 +3,87 @@
 }*/
 
 html {
-  height: 90%;
-  width: 90%;
+  height: 100%;
+  width: 100%;
 }
 
 body{
   display:flex;
   justify-content: center;
   flex-direction:column;
-  background-color: #24aacc ;
+  background-color: #bfecf7 ;
+  align-items: center;
+  margin: 0px;
+}
+
+h1, #colorField, button, #resolution{
+  border: blueviolet 2px solid;
+  box-shadow: 2px 2px 2px darkgray;
+  background-color: white;
+  border-radius: 0.3em;
+  padding: 1em;
+}
+
+#mainContent{
+  display: flex; 
+}
+
+#colorField{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  border-radius: 0.3em;
+  margin-bottom: 1em;
+  gap: 1em;
+
+
+}
+
+#resolution{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1em;
+  background-color: white;
+  margin-bottom: 25px;
 }
 
 #canvas{
   display:flex;
   justify-content: center;  
-
-  
+  margin-bottom: auto;
+  border: blueviolet solid 1px;
+  border-radius: 0.3em;
+  margin-left: 4em;
+  margin-right: 4em;
+  box-shadow: 2px 2px 2px darkgray;
 }
+
 #container{
   display: flex;
   flex-wrap: wrap;
+
+}
+
+button{
+  border-radius: 5px;
+  width: fit-content;
+  height: fit-content;
+  background-color: blueviolet;
+  color: white;
+  font-weight: bold;
+  font-size: larger;
+  transition: all 0.3s ease;
+}
+
+button:hover{
+  transform: scale(1.1);
+}
+
+button:active{
+  transform: scale(1.0);
 }
 
 label{
@@ -30,14 +91,21 @@ label{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
 }
 
-#resolution{
-  display:flex;
-  flex-direction: row;
+footer{
+  background-color: cadetblue;
+  height:fit-content;
+  padding-top: auto;
+  width: 100%;
+  display: flex;
   justify-content: center;
-  gap: 10px;
-  background-color: #24aacc;
-  margin-bottom: 25px;
-  }
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2em;
+}
+
+
+
+
+
